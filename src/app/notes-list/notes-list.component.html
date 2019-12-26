@@ -1,0 +1,4 @@
+<div class="container">
+    <app-add-note (noteCreated)="onNoteAdded($event)"></app-add-note>
+    <app-note-item *ngFor="let noteEl of Notes" [note]="noteEl" (noteRemoved)="onNoteRemoved($event)"></app-note-item>
+</div>

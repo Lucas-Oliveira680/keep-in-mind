@@ -1,0 +1,20 @@
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: space-between;
+}
+
+mat-form-field {
+    min-width: 400px;
+    max-width: 400px;
+}
+input {
+    font-size: 12px;
+    font-family: 'Roboto', sans-serif;
+}
+.btn {
+    margin: 20px;
+    
+}

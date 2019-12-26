@@ -1,0 +1,9 @@
+<div class="container">
+    <mat-form-field>
+        <input id="input"
+         matInput placeholder="New Note"
+         [(ngModel)]="newNoteTitle">
+    </mat-form-field>
+    <button mat-raised-button color="warn" (click)="onAddNote()" class="btn">Add note
+    </button>
+</div>

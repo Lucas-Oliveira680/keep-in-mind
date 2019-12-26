@@ -1,0 +1,14 @@
+<ul class='notes'>
+    <li>
+        <div class="note">
+            <div id="colorChange" (click)="onColorChange()"></div>
+            <div id="noteRemove" (click)="onRemoveNote()">X</div>
+            <input [(ngModel)]="note.title" placeholder="New Note">
+            <hr>
+            <textarea matInput cdkTextareaAutosize
+             cdkAutosizeMinRows="8"
+              cdkAutosizeMaxRows="8"
+              [(ngModel)]="note.text" id="text"></textarea>
+        </div>
+    </li>
+</ul>
