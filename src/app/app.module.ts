@@ -12,6 +12,9 @@ import { TextFieldModule } from '@angular/cdk/text-field';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AddNoteComponent } from './notes-list/add-note/add-note.component';
+import { InfoComponent } from './info/info.component';
+import { SourceComponent } from './info/source/source.component';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,9 @@ import { AddNoteComponent } from './notes-list/add-note/add-note.component';
     HeaderComponent,
     NotesListComponent,
     NoteItemComponent,
-    AddNoteComponent
+    AddNoteComponent,
+    InfoComponent,
+    SourceComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +33,8 @@ import { AddNoteComponent } from './notes-list/add-note/add-note.component';
     MatButtonModule,
     TextFieldModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

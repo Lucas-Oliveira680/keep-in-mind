@@ -1,0 +1,16 @@
+.main-card {
+    max-width: 400px;
+    display: block;
+    margin: 0 auto;
+    top: 150px;
+}
+
+.avatar {
+  background-image: url('../../../assets/avatar.png');
+  background-size: cover;
+}
+#btn {
+    display: block;
+    margin: 0 auto;
+    
+}
