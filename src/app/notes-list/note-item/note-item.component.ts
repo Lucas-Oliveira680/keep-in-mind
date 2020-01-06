@@ -8,15 +8,19 @@ import { Note } from './note';
   templateUrl: './note-item.component.html',
   styleUrls: ['./note-item.component.css']
 })
+
 export class NoteItemComponent {
   @Input() note: Note;
-
+  title = (<HTMLInputElement>document.getElementById("input")).value;
 
   constructor(private noteService: NoteService) { }
 
-  onRemoveNote(i) {
-    this.noteService.removeNote(i)
+  
+  onRemoveNote() {
+    console.log(this.title)
+    this.noteService.removeNote(this.title)
   }
+
   onColorChange(i) {
 
   }

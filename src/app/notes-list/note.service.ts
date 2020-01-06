@@ -4,25 +4,28 @@ import { EventEmitter } from '@angular/core';
 export class NoteService {
     notesChanged = new EventEmitter<Note[]>();
 
-    private Notes: Note[] = [
-        new Note('Yellow', '', '')
-    ];
+    private Notes: Note[] = [];
 
     addNote(newNoteTitle) {
-        this.Notes.push (new Note('Yellow', newNoteTitle, ''))
+        this.Notes.push(new Note('Yellow', newNoteTitle, ''))
         this.notesChanged.emit(this.Notes.slice());
     }
 
-    removeNote(i) {
-        this.Notes.splice(i,1)
+    removeNote(title) {
+        console.log(title)
+        let matchedIndex = this.Notes.map(
+        function (obj) { return obj.title; }).indexOf(title)
+        this.Notes.splice(matchedIndex,1)
+
         this.notesChanged.emit(this.Notes.slice());
-        console.log('note removed')
     }
 
-    changeColor(i) {
+
+    changeColor() {
         console.log('Color changed to ')
     }
+
     getNotes() {
-       return this.Notes.slice()
+        return this.Notes.slice()
     }
 }

@@ -27,6 +27,8 @@ export class NotesListComponent implements OnInit {
         this.Notes = notes
       }
     );
+
   }
+
 
 }
