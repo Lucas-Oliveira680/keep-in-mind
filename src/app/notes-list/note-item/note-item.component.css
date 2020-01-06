@@ -102,3 +102,77 @@ textarea:focus, input:focus{
 .btn {
     margin: 10px;
 }
+
+.colors {
+    list-style:none;
+    padding:0px;
+    margin:0px;
+    height: 40px;
+    width: 210px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid black;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    margin-left: 20px;
+}
+#color ul li {
+    display: inline
+}
+
+#Yellow {
+    height: 35px;
+    width: 35px;
+    border: solid 2px black;
+    background-color: #ebda2a;
+    border-radius: 50%;
+    margin: 0px 6px 0px 6px;
+    float: left;
+    cursor: pointer;
+}
+
+#Yellow:hover {
+    border: solid 2px white;
+}
+
+#Pink {
+    height: 35px;
+    width: 35px;
+    border: solid 2px black;
+    background-color: #ffb6c1;
+    border-radius: 50%;
+    margin: 0px 6px 0px 6px;
+    cursor: pointer;
+}
+
+#Pink:hover {
+    border: solid 2px white;
+}
+
+#Blue {
+    height: 35px;
+    width: 35px;
+    border: solid 2px black;
+    background-color: #add8e6;
+    border-radius: 50%;
+    margin: 0px 6px 0px 6px;
+    cursor: pointer;
+}
+
+#Blue:hover {
+    border: solid 2px white;
+}
+
+#Green {
+    height: 35px;
+    width: 35px;
+    border: solid 2px black;
+    background-color: #90ee90;
+    border-radius: 50%;
+    margin: 0px 6px 0px 6px;
+    cursor: pointer;
+}
+
+#Green:hover {
+    border: solid 2px white;
+}

@@ -11,7 +11,7 @@ export class NoteService {
         this.notesChanged.emit(this.Notes.slice());
     }
 
-    removeNote(title) {
+    removeNote(title: string) {
         console.log(title)
         let matchedIndex = this.Notes.map(
         function (obj) { return obj.title; }).indexOf(title)

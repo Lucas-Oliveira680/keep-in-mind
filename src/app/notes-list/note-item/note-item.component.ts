@@ -17,8 +17,8 @@ export class NoteItemComponent {
 
   
   onRemoveNote() {
-    console.log(this.title)
     this.noteService.removeNote(this.title)
+    console.log(`The note ${this.title} was removed`)
   }
 
   onColorChange(i) {
