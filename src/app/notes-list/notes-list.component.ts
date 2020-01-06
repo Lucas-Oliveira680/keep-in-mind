@@ -1,30 +1,32 @@
 import { Component, OnInit } from '@angular/core';
 import { Note } from './note-item/note';
+import { NoteService } from './note.service';
 
 @Component({
   selector: 'app-notes-list',
   templateUrl: './notes-list.component.html',
-  styleUrls: ['./notes-list.component.css']
+  styleUrls: ['./notes-list.component.css'],
+  providers: [NoteService]
 })
 export class NotesListComponent implements OnInit {
+  Notes: Note[]
+  newNoteTitle:string
 
-  constructor() { }
+  constructor(private noteService: NoteService) { }
 
-  Notes: Note [] = [
-    new Note ('Yellow', '', '')
-  ];
-
-  onNoteAdded(noteCreated) {
-    this.Notes.push(noteCreated);
-    console.log(this.Notes)
-  }
-
-  onNoteRemoved(text) {
-    this.Notes.splice(text, 1);
-    console.log('note removed')
+  onAddNote() {
+    this.newNoteTitle = (<HTMLInputElement>document.getElementById("input")).value;
+    this.noteService.addNote(this.newNoteTitle);
+    this.newNoteTitle = "";
   }
 
   ngOnInit() {
+    this.Notes = this.noteService.getNotes();
+    this.noteService.notesChanged.subscribe(
+      (notes: Note[]) => {
+        this.Notes = notes
+      }
+    );
   }
 
 }

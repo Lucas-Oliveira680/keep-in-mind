@@ -1,29 +1,24 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { NoteService } from '../note.service';
 import { Note } from './note';
+
 
 @Component({
   selector: 'app-note-item',
   templateUrl: './note-item.component.html',
   styleUrls: ['./note-item.component.css']
 })
-export class NoteItemComponent implements OnInit {
-@Input() note: Note;
+export class NoteItemComponent {
+  @Input() note: Note;
 
-@Output() noteRemoved = new EventEmitter<string>();
 
-constructor() { }
+  constructor(private noteService: NoteService) { }
 
-onRemoveNote() {
-  let text = (<HTMLTextAreaElement>document.getElementById("text")).value
-  this.noteRemoved.emit(text)
-  console.log(text)
+  onRemoveNote(i) {
+    this.noteService.removeNote(i)
   }
+  onColorChange(i) {
 
-  onColorChange() {
-    console.log('color changes to: Yellow')
-  }
-  
-  ngOnInit() {
   }
 
 }

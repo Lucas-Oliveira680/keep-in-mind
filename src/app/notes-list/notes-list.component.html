@@ -1,4 +1,13 @@
+<div class="noteAdd">
+    <mat-form-field>
+        <input id="input"
+         matInput placeholder="New Note"
+         [(ngModel)]="newNoteTitle">
+    </mat-form-field>
+    <button mat-raised-button color="warn" (click)="onAddNote()" class="btn">Add note
+    </button>
+</div>
+
 <div class="container">
-    <app-add-note (noteCreated)="onNoteAdded($event)"></app-add-note>
-    <app-note-item *ngFor="let noteEl of Notes" [note]="noteEl" (noteRemoved)="onNoteRemoved($event)"></app-note-item>
+    <app-note-item *ngFor="let noteEl of Notes" [note]="noteEl" let i = "index"></app-note-item>
 </div>

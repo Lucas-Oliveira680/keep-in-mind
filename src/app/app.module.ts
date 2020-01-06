@@ -11,7 +11,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { TextFieldModule } from '@angular/cdk/text-field';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AddNoteComponent } from './notes-list/add-note/add-note.component';
 import { InfoComponent } from './info/info.component';
 import { SourceComponent } from './info/source/source.component';
 import { MatCardModule } from '@angular/material/card';
@@ -22,7 +21,6 @@ import { MatCardModule } from '@angular/material/card';
     HeaderComponent,
     NotesListComponent,
     NoteItemComponent,
-    AddNoteComponent,
     InfoComponent,
     SourceComponent
   ],
