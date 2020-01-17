@@ -1,22 +1,25 @@
 <ul class='notes'>
     <li>
-        <div class="color-selector">
+        <div class="color-selector" *ngIf="colorChangeToggle">
             <ul class="colors">
-                <li id="Yellow"></li>
-                <li id="Pink"></li>
-                <li id="Blue"></li>
-                <li id="Green"></li>
+                <li id="Yellow" (click)="onColorSelected('Yellow')"></li>
+                <li id="Pink" (click)="onColorSelected('Pink')"></li>
+                <li id="Blue" (click)="onColorSelected('Blue')"></li>
+                <li id="Green" (click)="onColorSelected('Green')"></li>
             </ul>
         </div>
-        <div class="note">
-            <div id="colorChange" (click)="onColorChange(i)"></div>
-            <div id="noteRemove" (click)="onRemoveNote(i)">X</div>
-            <input [(ngModel)]="note.title" placeholder="New Note">
+        <div class="note" [ngStyle]="{backgroundColor: note.color}">
+            <div id="colorChange" (click)="onColorChange()"></div>
+            <div id="noteRemove" (click)="onRemoveNote()">X</div>
+            <input [(ngModel)]="note.title"
+             placeholder="New Note"
+             (ngModelChange)="onContentChange($event)">
             <hr>
             <textarea matInput cdkTextareaAutosize
              cdkAutosizeMinRows="8"
               cdkAutosizeMaxRows="8"
-              [(ngModel)]="note.text"></textarea>
+              [(ngModel)]="note.text"
+              (ngModelChange)="onContentChange($event)"></textarea>
         </div>
     </li>
 </ul>   

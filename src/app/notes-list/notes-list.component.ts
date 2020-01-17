@@ -16,8 +16,14 @@ export class NotesListComponent implements OnInit {
 
   onAddNote() {
     this.newNoteTitle = (<HTMLInputElement>document.getElementById("input")).value;
-    this.noteService.addNote(this.newNoteTitle);
-    this.newNoteTitle = "";
+    if(this.newNoteTitle !== '') {
+      this.noteService.addNote(this.newNoteTitle);
+      this.newNoteTitle = "";
+      console.log(this.Notes + 'Note Added')
+    } else {
+      alert('Title Field is blank')
+    }
+
   }
 
   ngOnInit() {

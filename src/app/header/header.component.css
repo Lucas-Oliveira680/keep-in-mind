@@ -6,17 +6,14 @@
     -moz-user-select: none;
     -khtml-user-select: none;
     -webkit-user-select: none;
-    -o-user-select: none;
-    
+    -o-user-select: none; 
 }
-
 h1 {
     float: left;
     position: relative;
     font-size: 22px;
     color: white;
     margin-left: 10px;
-
 }
 #logo {
     float: left;
@@ -48,7 +45,6 @@ ul li{
 ul li:hover {
     color: #fff;
     transition: 0.4s;
-
 }
 li a {
      text-decoration: none;
@@ -56,4 +52,8 @@ li a {
      width: 100%;
      height: 100%;
      margin: 0px;
+}
+.active {
+    -webkit-text-decoration: #7159c1 double underline;
+    text-decoration: #7159c1 double underline;
 }

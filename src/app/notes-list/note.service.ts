@@ -12,19 +12,25 @@ export class NoteService {
     }
 
     removeNote(title: string) {
-        console.log(title)
         let matchedIndex = this.Notes.map(
         function (obj) { return obj.title; }).indexOf(title)
         this.Notes.splice(matchedIndex,1)
-
         this.notesChanged.emit(this.Notes.slice());
     }
 
-
-    changeColor() {
-        console.log('Color changed to ')
+    changeColor(color: string, title: string) {
+        console.log(this.Notes)
+        console.log('title searched', title)
+        let matchedIndex = this.Notes.map(
+        function (obj) { return obj.title; }).indexOf(title)
+        this.Notes[matchedIndex].color = color
+        this.notesChanged.emit(this.Notes.slice());
     }
-
+    contentChange(title){
+        let matchedIndex = this.Notes.map(
+        function (obj) { return obj.title; }).indexOf(title)
+        return this.Notes[matchedIndex].title
+    }
     getNotes() {
         return this.Notes.slice()
     }
