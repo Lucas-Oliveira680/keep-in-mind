@@ -49,4 +49,8 @@ export class NoteItemComponent {
   onContentChange(title) {
     this.title = this.noteService.contentChange(title)
   }
+  // teste(){
+  //  let notes = this.noteService.getNotes()
+  //  console.log(notes)
+  // }
 }

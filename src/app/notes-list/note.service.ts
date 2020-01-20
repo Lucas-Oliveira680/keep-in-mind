@@ -4,7 +4,15 @@ import { EventEmitter } from '@angular/core';
 export class NoteService {
     notesChanged = new EventEmitter<Note[]>();
 
-    private Notes: Note[] = [];
+    private Notes: Note[] = [
+        new Note('Yellow', '', '','')
+    ];
+
+    fetchByTitle(title) {
+        let matchedIndex = this.Notes.map(
+        function (obj) { return obj.title; }).indexOf(title)
+        return matchedIndex
+    }
 
     addNote(newNoteTitle) {
         this.Notes.push(new Note('Yellow', newNoteTitle, ''))
@@ -12,24 +20,19 @@ export class NoteService {
     }
 
     removeNote(title: string) {
-        let matchedIndex = this.Notes.map(
-        function (obj) { return obj.title; }).indexOf(title)
-        this.Notes.splice(matchedIndex,1)
+        let index = this.fetchByTitle(title)
+        this.Notes.splice(index,1)
         this.notesChanged.emit(this.Notes.slice());
     }
 
     changeColor(color: string, title: string) {
-        console.log(this.Notes)
-        console.log('title searched', title)
-        let matchedIndex = this.Notes.map(
-        function (obj) { return obj.title; }).indexOf(title)
-        this.Notes[matchedIndex].color = color
+        let index = this.fetchByTitle(title)
+        this.Notes[index].color = color
         this.notesChanged.emit(this.Notes.slice());
     }
     contentChange(title){
-        let matchedIndex = this.Notes.map(
-        function (obj) { return obj.title; }).indexOf(title)
-        return this.Notes[matchedIndex].title
+        let index = this.fetchByTitle(title)
+        return this.Notes[index].title
     }
     getNotes() {
         return this.Notes.slice()

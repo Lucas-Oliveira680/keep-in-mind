@@ -12,14 +12,17 @@
             <div id="colorChange" (click)="onColorChange()"></div>
             <div id="noteRemove" (click)="onRemoveNote()">X</div>
             <input [(ngModel)]="note.title"
-             placeholder="New Note"
-             (ngModelChange)="onContentChange($event)">
+            placeholder="New Note"
+            (ngModelChange)="onContentChange($event)">
             <hr>
             <textarea matInput cdkTextareaAutosize
-             cdkAutosizeMinRows="8"
-              cdkAutosizeMaxRows="8"
-              [(ngModel)]="note.text"
-              (ngModelChange)="onContentChange($event)"></textarea>
-        </div>
+            cdkAutosizeMinRows="8"
+            cdkAutosizeMaxRows="8"
+              [(ngModel)]="note.text"></textarea>
+              <input class = "tag"
+            matInput [(ngModel)]="note.tag"
+            placeholder="[tag]">
+              <!-- <button (click)="teste()">teste</button> -->
+            </div>
     </li>
 </ul>   

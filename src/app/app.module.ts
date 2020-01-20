@@ -14,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InfoComponent } from './info/info.component';
 import { SourceComponent } from './info/source/source.component';
 import { MatCardModule } from '@angular/material/card';
+import { NoteTagComponent } from './notes-list/note-tag/note-tag.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { MatCardModule } from '@angular/material/card';
     NotesListComponent,
     NoteItemComponent,
     InfoComponent,
-    SourceComponent
+    SourceComponent,
+    NoteTagComponent
   ],
   imports: [
     BrowserModule,
